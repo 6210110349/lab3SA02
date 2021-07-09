@@ -55,6 +55,14 @@
   color: rgb(145, 255, 0);
   background: rgb(197, 255, 192);
  }
+.header{
+  color: aliceblue;
+  text-align: center;
+  background: rgb(14, 13, 13);
+}
+.body{
+  background: rgb(46, 42, 42);
+}
  
 
  

@@ -1,16 +1,20 @@
 import WordCard from './WordCard';
+import './App.css';
 
 import './App.css';
 const word= 'XXXXXXSSSS';
 function App() {
  return (
- <div >
+ <div className ={'body'}>
    <div>
-      เกมนี้เป็นเกมสุ่มการ์ดโดยหากสุ่มได้การ์ด X แต้มจะถูกลบ และหากสุ่มได้ S หาก score = 100 ก็จะชนะ
+      <header >
+       <h1 className ={'header'} >RAMDOMCARD</h1>
+      </header>
    </div>
    <div><WordCard value={word}/></div>
  
  </div>
+ 
  );
 }
 
