@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React,{useState} from 'react';
 import CharacterCard from './CharacterCard';
- 
+import Scoremanage from './Scoremanage';
 const prepareStateFromWord = (given_word) => {
     let word = given_word.toUpperCase()
     let chars = _.shuffle(Array.from(word))
@@ -56,10 +56,16 @@ export default function WordCard(props){
     }
     return (
             <div>
-                {
+                <div>
+                    < Scoremanage score={state.score} blood={state.blood}/>
+                    
+                </div>
+                <div>
+                    {
                     state.chars.map((c, i)=>
                         <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt = {state.attempt} blood = {state.blood}/>)
-                }
+                    }
+                </div>
             </div>
         )
        

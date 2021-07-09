@@ -9,6 +9,16 @@
   margin: 1em;
   user-select: none;
 }
+.cardscore {
+  display: inline-block;
+  text-align: center;
+  width: 7em;
+  font-size: 2em;
+  background: rgb(250, 249, 249);
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+  margin: 1em;
+  user-select: none;
+}
 .App {
   text-align: center;
 }
@@ -63,6 +73,7 @@
 .body{
   background: rgb(46, 42, 42);
 }
+
  
 
  
