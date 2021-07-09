@@ -11,6 +11,8 @@ const prepareStateFromWord = (given_word) => {
         chars,
         attempt: 1,
         score: 0,
+        win:0,
+        lost:0,
         completed: false
     }
 }
@@ -21,21 +23,21 @@ export default function WordCard(props){
         console.log(`${c} has been activated.`)
         
         if(c === 'X'){
-            let blood = state.blood-50
+            let blood = state.blood-40
             setState({...state,  blood})
             console.log(blood)
-            if(blood === 0){
-                console.log('game over')
-                setState({...state, attempt: state.attempt + 1 , blood : 100 , score : 0 })
+            if(blood < 0){
+                
+                setState({...state, attempt: state.attempt + 1 , blood : 100 , score : 0 ,lost:state.lost+1})
             }
         }
         if(c === 'S'){
-            let score = state.score+50
-            setState({...state,  score: state.score+50})
+            let score = state.score+40
+            setState({...state,  score})
             console.log(score)
-            if(score === 100){
-                console.log('you win')
-                setState({...state, attempt: state.attempt + 1 , blood : 100 , score : 0 })
+            if(score > 100){
+                setState({...state,  win:state.win+1})
+                setState({...state, attempt: state.attempt + 1 , blood : 100 , score : 0 ,win:state.win+1})
             }
 
         }
@@ -57,7 +59,7 @@ export default function WordCard(props){
     return (
             <div>
                 <div>
-                    < Scoremanage score={state.score} blood={state.blood}/>
+                    < Scoremanage score={state.score} blood={state.blood} win={state.win} lost={state.lost}/>
                     
                 </div>
                 <div>
