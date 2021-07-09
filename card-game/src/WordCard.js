@@ -15,12 +15,15 @@ const prepareStateFromWord = (given_word) => {
 }
 export default function WordCard(props){
     const [state,setState] = useState(prepareStateFromWord(props.value))
+    
     const activationHandler = (c) => {
         console.log(`${c} has been activated.`)
         let guess = state.guess + c
+        console.log(guess)
         setState({...state, guess})
-        if(guess.length == state.word.length){
-            if(guess == state.word){
+        if(guess.length === state.word.length){
+            
+            if(guess === state.word){
                 console.log('yeah!')
                 setState({...state, guess: '', completed: true})
             }
