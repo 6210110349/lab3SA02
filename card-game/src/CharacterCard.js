@@ -3,6 +3,8 @@ import './App.css';
 export default function CharacterCard(props) {
  const [active, setActive] = useState(false);
  const attemptRef = useRef(props.attempt);
+
+
  
  const activate = () => {
     if(!active){
@@ -17,10 +19,13 @@ export default function CharacterCard(props) {
          setActive(false);
          attemptRef.current = props.attempt;
      }
+     
+    
+    
 
  })
  
- const className = `card ${active ? 'activeCard': ''}`
+ const className = `card ${active ? (props.value=='X' ? 'activeCardX': 'activeCardS' ): ''}`
  return (
  <div className={className} onClick={activate}>{props.value}</div>
  )
