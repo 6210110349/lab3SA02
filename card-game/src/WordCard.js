@@ -36,26 +36,12 @@ export default function WordCard(props){
             setState({...state,  score})
             console.log(score)
             if(score > 100){
-                setState({...state,  win:state.win+1})
+                
                 setState({...state, attempt: state.attempt + 1 , blood : 100 , score : 0 ,win:state.win+1})
             }
 
         }
-        //let guess = state.guess + c
-        //console.log(guess)
-        //setState({...state, guess})
-        //if(guess === state.word.length){
-            
-         //   if(guess === state.word){
-          //      console.log('yeah!')
-            //    setState({...state, guess: '', completed: true})
-           // }
-            //else{
-            //    console.log('reset')
-            //    setState({...state, guess: '', attempt: state.attempt + 1})
-       // }
-       // }
-    }
+   
     return (
             <div>
                 <div>
@@ -71,4 +57,4 @@ export default function WordCard(props){
             </div>
         )
        
-}
+}}

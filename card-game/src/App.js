@@ -1,8 +1,6 @@
 import WordCard from './WordCard';
 import './App.css';
-
-import './App.css';
-const word= 'XXXXXXSSSS';
+const word= 'XXXXXSSSSS';
 function App() {
  return (
  <div className ={'body'}>
